@@ -62,7 +62,98 @@
   @media(max-width:900px){.foto-container{width:320px;height:320px;}.foto{width:180px;height:180px;}.logo-orbit{width:45px;height:45px;margin:-22.5px;}.menu-display,.info,.contacto,.video-section{padding:0 10px;}}
   @media(max-width:600px){h1{font-size:2.2rem;}.foto-container{width:260px;height:260px;}.foto{width:140px;height:140px;}.logo-orbit{width:35px;height:35px;margin:-17.5px;} iframe{height:250px;}}
   @font-face { font-family: mitipo; src: url(letra/a.ttf); }
-  .XD { text-align:center; }
+  /* Contenedor del formulario */
+.XD {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background: rgba(0, 245, 238, 0.05);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,245,238,0.3);
+  max-width: 600px;
+  margin: 50px auto;
+  backdrop-filter: blur(5px);
+}
+
+/* Formulario */
+#contact-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Título */
+#contact-form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #00F5EE;
+  text-shadow: 0 0 10px #00F5EE;
+  font-size: 2rem;
+}
+
+/* Labels */
+#contact-form label {
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: #84E1E5;
+}
+
+/* Inputs y textarea */
+#contact-form input,
+#contact-form textarea {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 2px solid #00F5EE55;
+  background: rgba(0,0,0,0.3);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  border-color: #00F5EE;
+  box-shadow: 0 0 15px #00F5EE55;
+}
+
+/* Textarea */
+#contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+  margin-bottom: 15px;
+}
+
+/* Botón */
+#contact-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #00F5EE;
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#contact-form button:hover {
+  background-color: #84E1E5;
+  box-shadow: 0 0 20px #00F5EE88;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .XD {
+    padding: 30px 15px;
+    margin: 30px 10px;
+  }
+
+  #contact-form h2 {
+    font-size: 1.5rem;
+  }
+}
 </style>
 </head>
 <body>
@@ -217,11 +308,13 @@ setInterval(createShape,700);
   const form = document.getElementById('contact-form');
   form.addEventListener('submit', function(e){
     e.preventDefault();
+
+    // Enviar el formulario usando EmailJS
     emailjs.sendForm(
-      'service_8evdls4', 
-      'template_syl13kv', 
-      this, 
-      'unFF9lVW89AvBpnyw'
+      'service_8evdls4',      // tu Service ID
+      'template_syl13kv',      // tu Template ID
+      this,                    // referencia al formulario
+      'unFF9lVW89AvBpnyw'      // tu Public Key
     ).then(() => {
       alert('✅ Mensaje enviado correctamente. ¡Gracias por contactarme!');
       form.reset();
