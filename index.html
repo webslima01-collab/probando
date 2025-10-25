@@ -46,7 +46,7 @@
   .menu-section.active { display:block; }
   @keyframes fadeIn { from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
   .galeria { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:15px; margin-top:15px; }
-  .galeria img { width:100%; border-radius:10px; transition:transform 0.3s, box-shadow 0.3s; }
+  .galeria img { width:100%; border-radius:10px; transition:transform 0.3s, box-shadow 0.3s; box-shadow: 0 0 5px 0 rgb(255, 255, 255); }
   .galeria img:hover { transform:scale(1.05); box-shadow:0 0 15px #00F5EEaa; }
   .video-section { text-align:center; margin:80px auto; z-index:10; position:relative; padding:0 15px; }
   iframe { width:90%; max-width:700px; height:400px; border:3px solid #00F5EE; border-radius:20px; box-shadow:0 0 30px #00F5EE; }
@@ -208,7 +208,6 @@ setInterval(createShape,700);
       <div class="menu-item" data-content="quienes">Quiénes somos</div>
       <div class="menu-item" data-content="habilidades">Habilidades</div>
       <div class="menu-item" data-content="precios">Precios</div>
-      <div class="menu-item" data-content="historia">Historia</div>
     </div>
   </div>
 
@@ -225,28 +224,26 @@ setInterval(createShape,700);
 
     <div id="quienes" class="menu-section">
       <h3>Quiénes somos</h3>
-      <p>Limawebs es un proyecto de desarrollo frontend especializado...</p>
-      <div class="galeria"><img src="equipo.jpg"></div>
+      <p>Lima Webs nació de la pasión por el código y el diseño.
+      Todo empezó como un proyecto personal, buscando unir lo técnico del desarrollo web con lo emocional del diseño gráfico.
+      Con el tiempo, ese hobby se transformó en una propuesta profesional, ofreciendo sitios web personalizados y con identidad propia.
+      Cada proyecto ha sido una oportunidad para crecer, aprender y dejar huella en el mundo digital.
+      Hoy seguimos con la misma esencia: crear experiencias web únicas que inspiren y conecten.</p>
+      <div class="galeria"></div>
     </div>
 
     <div id="habilidades" class="menu-section">
       <h3>Habilidades</h3>
       <div class="galeria">
-        <img src="html.png"><img src="css.png"><img src="js.png">
-        <img src="react.png"><img src="github.png"><img src="firebase.png">
+        <img src="img/htmlcssjs.jpeg"><img src="img/vsc.jpeg"><img src="img/nodejs.jpeg">
+        <img src="img/react.jpeg"><img src="img/emailjs.jpeg"><img src="img/gg.jpeg">
       </div>
     </div>
 
     <div id="precios" class="menu-section">
       <h3>Precios</h3>
-      <div class="galeria"><img src="precio1.jpg"><img src="precio2.jpg"><img src="precio3.jpg"></div>
+      <div class="galeria"><img src="img/landingpage.png" alt="LandingPage"><img src="img/portafolio.png" alt="Sitio web o portafolio"><img src="img/corporativo.png" alt="Sitio web corporativo"><img src="img/ecommerce.png" alt="E-Commerce"><img src="img/webadministrable.png" alt="Web administable"></div>
     </div>
-
-    <div id="historia" class="menu-section">
-      <h3>Historia</h3>
-      <div class="galeria"><img src="historia.jpg"></div>
-    </div>
-  </div>
 </section>
 
 <section class="video-section">
